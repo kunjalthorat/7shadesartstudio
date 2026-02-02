@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import heroVideo from "../assets/videos/Hero_video.mp4"
 
 export default function Hero() {
   const videoRef = useRef(null)
@@ -40,7 +41,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover brightness-90"
         preload="auto"
       >
-        <source src="/src/assets/videos/Hero_video.mp4" type="video/mp4" />
+        <source src={heroVideo} type="video/mp4" />
       </video>
 
       {/* Dark Overlay */}

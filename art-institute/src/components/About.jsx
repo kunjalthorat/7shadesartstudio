@@ -5,6 +5,9 @@ import {
   FaStar,
   FaPalette,
 } from "react-icons/fa"
+import heroImg from "../assets/team/Hero.jpeg"
+import founderImg from "../assets/team/founder.jpeg"
+import bgGreen from "../assets/background/green.png"
 
 /* ----------------------------------------
    Lazy Image
@@ -51,7 +54,7 @@ export default function About() {
     <main
       className="min-h-screen bg-white text-black px-6 md:px-10 py-28
                  bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url(/src/assets/background/green.png)" }}
+      style={{ backgroundImage: `url(${bgGreen})` }}
     >
 
       {/* ================================================= */}
@@ -88,7 +91,7 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <LazyImage
-            src="/src/assets/team/Hero.jpeg"
+            src={heroImg}
             alt="Art Studio"
             className="w-full h-[360px] object-cover rounded-2xl"
           />
@@ -180,7 +183,7 @@ export default function About() {
         >
 
           <LazyImage
-            src="/src/assets/team/founder.jpeg"
+            src={founderImg}
             alt="Founder"
             className="w-full h-[320px] object-cover rounded-xl"
           />

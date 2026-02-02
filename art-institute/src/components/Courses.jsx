@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom"
+import bgYellow from "../assets/background/yellow.png"
 
 const categories = [
   {
@@ -44,7 +45,7 @@ const categories = [
 export default function Courses() {
   const trackRef = useRef(null)
   const navigate = useNavigate()
-  const backgroundImage = "url(/src/assets/background/yellow.png)"
+  const backgroundImage = `url(${bgYellow})`
 
   const handleCourseClick = (categoryTitle) => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

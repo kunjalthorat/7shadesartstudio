@@ -1,4 +1,6 @@
 import { motion } from "framer-motion"
+import groupImg from "../assets/group/Group 1.jpeg"
+import bgGreen from "../assets/background/green.png"
 
 const LazyImage = ({ src, alt, ...props }) => {
   return (
@@ -16,7 +18,7 @@ export default function AboutMission() {
   return (
     <main
       className="bg-white text-black min-h-screen px-10 py-24 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url(/src/assets/background/green.png)" }}
+      style={{ backgroundImage: `url(${bgGreen})` }}
     >
 
       {/* MISSION & VISION WITH IMAGE */}
@@ -29,7 +31,7 @@ export default function AboutMission() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <LazyImage
-            src="/src/assets/group/Group 1.jpeg"
+            src={groupImg}
             alt="Art Studio"
             className="w-full h-[380px] object-cover rounded-2xl"
           />

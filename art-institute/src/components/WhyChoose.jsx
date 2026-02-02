@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import bgPink from "../assets/background/pink.png"
 
 export default function WhyChoose() {
   const [students, setStudents] = useState(0)
@@ -41,7 +42,7 @@ export default function WhyChoose() {
   return (
     <main
       className="bg-white text-black min-h-screen px-10 py-24 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url(/src/assets/background/pink.png)" }}
+      style={{ backgroundImage: `url(${bgPink})` }}
     >
       {/* HEADER */}
       <motion.section

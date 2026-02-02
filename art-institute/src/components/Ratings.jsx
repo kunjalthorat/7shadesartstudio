@@ -1,6 +1,7 @@
 ﻿import { motion } from "framer-motion"
 import gsap from "gsap"
 import { useEffect, useRef } from "react"
+import bgOrange from "../assets/background/orange.png"
 
 const ratings = [
   { platform: "Google Reviews", rating: "4.9 ", text: "265+ reviews" },
@@ -68,7 +69,7 @@ export default function Ratings() {
   return (
     <main 
       className="bg-white text-black min-h-screen py-16 bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col items-center justify-center" 
-      style={{ backgroundImage: "url(/src/assets/background/orange.png)" }}
+      style={{ backgroundImage: `url(${bgOrange})` }}
     >
 
       {/* RATINGS CARDS CENTERED */}

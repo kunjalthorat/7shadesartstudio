@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { MessageCircle, Mail, Phone } from "lucide-react"
+import bgGrey from "../assets/background/grey.png"
 
 export default function Contact() {
   return (
@@ -12,7 +13,7 @@ export default function Contact() {
     bg-cover bg-center bg-no-repeat
     flex items-start
   "
-      style={{ backgroundImage: "url(/src/assets/background/grey.png)" }}
+      style={{ backgroundImage: `url(${bgGrey})` }}
     >
 
 
