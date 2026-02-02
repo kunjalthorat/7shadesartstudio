@@ -3,41 +3,48 @@ import gsap from "gsap"
 import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 import bgYellow from "../assets/background/yellow.png"
+import paintingImg from "../assets/courses/painting.png"
+import craftImg from "../assets/courses/craft.png"
+import handwritingImg from "../assets/courses/handwriting.png"
+import pianoImg from "../assets/courses/piano.png"
+import abacusImg from "../assets/courses/abacus.png"
+import phonicsImg from "../assets/courses/phonics.jpg"
+import hobbyImg from "../assets/courses/hobby.png"
 
 const categories = [
   {
     title: "Drawing & Painting",
-    image: "/src/assets/courses/painting.png",
+    image: paintingImg,
     desc: "Master foundational sketching, portrait, and drawing techniques."
   },
   {
     title: "Art & Craft",
-    image: "/src/assets/courses/craft.png",
+    image: craftImg,
     desc: "Master foundational sketching, portrait, and drawing techniques."
   },
   {
     title: "Handwriting Improvement & Calligraphy",
-    image: "/src/assets/courses/handwriting.png",
+    image: handwritingImg,
     desc: "Improve clarity, speed, and presentation in multiple languages."
   },
   {
     title: "Singing & Music",
-    image: "/src/assets/courses/piano.png",
+    image: pianoImg,
     desc: "Learn Piano and Guitar with guided, confidence-building lessons."
   },
   {
     title: "Abacus & Vedic Maths",
-    image: "/src/assets/courses/abacus.png",
+    image: abacusImg,
     desc: "Build strong mental calculation and logical skills through structured Abacus and Vedic training."
   },
   {
     title: "Phonics Learning",
-    image: "/src/assets/courses/phonics.jpg",
+    image: phonicsImg,
     desc: "Improve clarity, speed, and presentation in multiple languages."
   },
   {
     title: "Hobby Classes",
-    image: "/src/assets/courses/hobby.png",
+    image: hobbyImg,
     desc: "Prepare for certified art exams with focused skill-based courses."
   }
 ]
