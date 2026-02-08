@@ -68,7 +68,18 @@ export default function Footer() {
                 }}
                 className="cursor-pointer hover:text-white transition"
               >
-                Gallery
+                Image Gallery
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                  navigate('/video-gallery')
+                }}
+                className="cursor-pointer hover:text-white transition"
+              >
+                Video Gallery
               </button>
             </li>
             <li>

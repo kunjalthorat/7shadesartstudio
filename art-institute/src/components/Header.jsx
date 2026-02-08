@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom"
 import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa"
 import logo from "../assets/logo_nobg.png"
 
-const navItems = ["Home", "Gallery", "Courses", "About", "Contact"]
+const navItems = ["Home", "Gallery", "Videos", "Courses", "About", "Contact"]
 
 export default function Header() {
 
@@ -27,15 +27,17 @@ export default function Header() {
 
   const isContactPage = location.pathname === "/contact"
   const isGalleryPage = location.pathname === "/gallery"
+  const isVideoGalleryPage = location.pathname === "/video-gallery"
   const isCoursesMainPage = location.pathname === "/courses-main"
   const isAboutPage = location.pathname === "/about"
 
   const isPrimaryBgPage =
-    isContactPage || isGalleryPage || isCoursesMainPage || isAboutPage
+    isContactPage || isGalleryPage || isCoursesMainPage || isAboutPage || isVideoGalleryPage
 
   const getActiveTab = () => {
     if (location.pathname === "/" || location.pathname === "") return "Home"
     if (isGalleryPage) return "Gallery"
+    if (isVideoGalleryPage) return "Videos"
     if (isCoursesMainPage) return "Courses"
     if (location.pathname === "/about") return "About"
     if (isContactPage) return "Contact"
@@ -49,6 +51,7 @@ export default function Header() {
     const routes = {
       Home: "/",
       Gallery: "/gallery",
+      Videos: "/video-gallery",
       Courses: "/courses-main",
       About: "/about",
       Contact: "/contact",
