@@ -195,8 +195,8 @@ export default function Footer() {
         <span>© {currentYear} 7 Shades Art Studio. All Rights Reserved.</span>
 
         <div className="flex gap-6">
-          <span>Privacy Policy</span>
-          <span>Terms & Conditions</span>
+          <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/privacy') }} className="hover:text-white transition">Privacy Policy</button>
+          <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/terms') }} className="hover:text-white transition">Terms & Conditions</button>
         </div>
 
       </div>

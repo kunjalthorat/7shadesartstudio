@@ -51,10 +51,10 @@ export default function WhyChoose() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
           Why Choose{" "}
           <span className="bg-gradient-to-r from-[#1F5C8C] to-[#0F2A44] bg-clip-text text-transparent">Us?</span>
-        </h1>
+        </h2>
       </motion.section>
 
       {/* CONTENT */}

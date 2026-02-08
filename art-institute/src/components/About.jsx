@@ -92,7 +92,7 @@ export default function About() {
         >
           <LazyImage
             src={heroImg}
-            alt="Art Studio"
+            alt="7 Shades Art Studio - Premier Art Institute in Punawale, Pune"
             className="w-full h-[250px] sm:h-[360px] object-cover rounded-2xl shadow-md"
           />
         </motion.div>
@@ -184,7 +184,7 @@ export default function About() {
 
           <LazyImage
             src={founderImg}
-            alt="Founder"
+            alt="Founder of 7 Shades Art Studio Pune"
             className="w-full h-[250px] sm:h-[320px] object-cover rounded-xl"
           />
 

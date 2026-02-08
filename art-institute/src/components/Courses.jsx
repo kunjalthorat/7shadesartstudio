@@ -83,7 +83,7 @@ export default function Courses() {
     >
       {/* TITLE */}
       <div className="text-center py-6 sm:py-8">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-[#1F5C8C] to-[#0F2A44] bg-clip-text text-transparent">Our Courses</h1>
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-[#1F5C8C] to-[#0F2A44] bg-clip-text text-transparent">Creative Courses</h2>
       </div>
 
       {/* CENTERED SLIDER */}

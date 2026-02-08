@@ -9,13 +9,8 @@ const videos = Object.entries(
         as: "url",
     })
 ).map(([path, url]) => {
-    // Extract filename for title and remove level mentions
-    const fileName = path.split('/').pop()
-        .replace('.mp4', '')
-        .replace(/_/g, ' ')
-        .replace(/\bL1\b/g, '')
-        .replace(/\bLevel\s*\d*\b/gi, '')
-        .trim()
+    // Extract filename for title - simply replace underscores with spaces
+    const fileName = path.split('/').pop().replace('.mp4', '').replace(/_/g, ' ')
     return { url, title: fileName }
 })
 
@@ -33,13 +28,7 @@ export default function VideoGallery() {
 
             {/* HEADER SECTION */}
             <div className="max-w-7xl mx-auto mb-16 text-center">
-                <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-[#1F5C8C] font-semibold tracking-widest uppercase text-xs mb-3"
-                >
-                    Visual Performances
-                </motion.p>
+
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -104,7 +93,7 @@ export default function VideoGallery() {
                                 controls
                                 autoPlay
                                 muted={isMuted}
-                                className="w-full h-full object-contain"
+                                className="w-full h-full object-contain rounded-2xl"
                             />
                         </motion.div>
 
@@ -117,9 +106,6 @@ export default function VideoGallery() {
                             <h2 className="text-white text-xl md:text-2xl font-bold tracking-wide">
                                 {active.title}
                             </h2>
-                            <p className="text-white/60 text-sm mt-2 font-medium">
-                                Student Performance at 7 Shades Art Studio
-                            </p>
                         </motion.div>
                     </motion.div>
                 )}
@@ -166,7 +152,7 @@ function VideoCard({ video, onClick, index }) {
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-2xl"
                 />
 
                 {/* Overlay Decoration */}
@@ -184,21 +170,13 @@ function VideoCard({ video, onClick, index }) {
             </div>
 
             {/* Content */}
-            <div className="p-6">
-                <h3 className="text-lg font-bold text-[#1F5C8C] uppercase tracking-wide line-clamp-1 group-hover:text-yellow-600 transition-colors">
+            <div className="p-5">
+                <h3 className="text-sm sm:text-base font-semibold text-[#1F5C8C] tracking-tight group-hover:text-yellow-600 transition-colors leading-snug">
                     {video.title}
                 </h3>
-                <div className="flex items-center gap-2 mt-2">
-                    <span className="w-8 h-1 bg-yellow-400 rounded-full" />
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Performance</span>
-                </div>
             </div>
 
-            <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold rounded-full border border-white/20 uppercase tracking-wider">
-                    Student Work
-                </span>
-            </div>
+
         </motion.div>
     )
 }

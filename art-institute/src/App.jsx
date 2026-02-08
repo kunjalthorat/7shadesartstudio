@@ -21,6 +21,58 @@ const LazyContact = lazy(() => import('./components/Contact'))
 const LazyRatings = lazy(() => import('./components/Ratings'))
 const LazyGallery = lazy(() => import('./components/Gallery'))
 const LazyVideoGallery = lazy(() => import('./components/VideoGallery'))
+const LazyPrivacy = lazy(() => import('./components/PrivacyPolicy'))
+const LazyTerms = lazy(() => import('./components/Terms'))
+
+import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+
+const SEO_DATA = {
+  "/": {
+    title: "Best Art & Music Classes in Punawale, Pune | 7 Shades Art Studio",
+    description: "Unleash your creativity at 7 Shades Art Studio, Punawale. Professional drawing, painting, and music classes for kids and adults. Expert faculty and certified courses."
+  },
+  "/courses-main": {
+    title: "Art & Music Courses in Pune | 7 Shades Art Studio",
+    description: "Explore our professional courses in Fine Arts, Sketching, Oil Painting, Guitar, and Piano. Certified curriculum tailored for all age groups in Punawale, Pune."
+  },
+  "/gallery": {
+    title: "Art Gallery - Student Masterpieces | 7 Shades Art Studio",
+    description: "Browse through our collection of stunning artworks created by talented students. From sketching to oil paintings, witness the creative journey at 7 Shades."
+  },
+  "/video-gallery": {
+    title: "Video Gallery - Student Performances | 7 Shades Art Studio",
+    description: "Watch our students perform guitar and piano classics. Live performances and musical milestones captured at 7 Shades Art Studio, Punawale."
+  },
+  "/about": {
+    title: "About Us - 7 Shades Art Studio | Pune's Premier Art Institute",
+    description: "Know more about our mission to inspire creativity. Led by expert faculty, we provide a nurturing environment for artists and musicians alike."
+  },
+  "/contact": {
+    title: "Contact Us - Visit 7 Shades Art Studio in Punawale",
+    description: "Join Pune's best art institute today. Get directions to our studio in Punawale, call us at 8390493388, or message us on WhatsApp for enquiries."
+  },
+  "/privacy": {
+    title: "Privacy Policy | 7 Shades Art Studio",
+    description: "Read our privacy policy to understand how we protect your data and maintain your privacy at 7 Shades Art Studio."
+  },
+  "/terms": {
+    title: "Terms & Conditions | 7 Shades Art Studio",
+    description: "Standard terms and conditions for enrollment and participation in courses at 7 Shades Art Studio."
+  }
+}
+
+function useSEO() {
+  const location = useLocation()
+  useEffect(() => {
+    const data = SEO_DATA[location.pathname] || SEO_DATA["/"]
+    document.title = data.title
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute("content", data.description)
+    }
+  }, [location])
+}
 
 const LoadingPlaceholder = () => (
   <div className="min-h-screen bg-white flex items-center justify-center">
@@ -28,7 +80,7 @@ const LoadingPlaceholder = () => (
   </div>
 )
 
-function App() {
+function AppContent() {
   return (
     <div className="overflow-x-hidden w-full relative bg-black">
       <Header />
@@ -83,6 +135,16 @@ function App() {
               <LazyContact />
             </Suspense>
           } />
+          <Route path="/privacy" element={
+            <Suspense fallback={<LoadingPlaceholder />}>
+              <LazyPrivacy />
+            </Suspense>
+          } />
+          <Route path="/terms" element={
+            <Suspense fallback={<LoadingPlaceholder />}>
+              <LazyTerms />
+            </Suspense>
+          } />
         </Routes>
       </div>
       <Footer />
@@ -90,4 +152,7 @@ function App() {
   )
 }
 
-export default App
+export default function App() {
+  useSEO()
+  return <AppContent />
+}

@@ -143,7 +143,7 @@ export default function Header() {
             <img
               src={logo}
               alt="7 Shades Art Studio Logo"
-              className="h-11 sm:h-12 w-auto object-contain"
+              className="h-11 sm:h-12 w-auto object-contain rounded-lg shadow-sm"
             />
             <span className="tracking-tight text-sm sm:text-lg md:text-xl font-bold">
               7 Shades Art Studio
@@ -196,7 +196,7 @@ export default function Header() {
         <div className="w-full">
           <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-10 py-1 h-[48px]">
             <div className="flex items-center gap-2">
-              <img src={logo} alt="Logo" className="h-11 sm:h-12 w-auto object-contain" />
+              <img src={logo} alt="Logo" className="h-11 sm:h-12 w-auto object-contain rounded-lg shadow-sm" />
               <span className="tracking-tight text-sm sm:text-lg md:text-xl font-bold">7 Shades Art Studio</span>
             </div>
             <button
