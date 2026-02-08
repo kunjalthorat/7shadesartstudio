@@ -73,11 +73,20 @@ export default function Gallery() {
     <section className="min-h-screen bg-white px-4 sm:px-6 pt-24 pb-12 overflow-x-hidden">
 
       {/* PAGE HEADER */}
-      <div className="max-w-7xl mx-auto mb-12 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#1F5C8C] to-[#0F2A44] bg-clip-text text-transparent mb-4">
+      <div className="max-w-7xl mx-auto mb-16 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#1F5C8C] to-[#0F2A44] bg-clip-text text-transparent pb-2 px-2 mb-4 hover:opacity-90 transition-opacity inline-block"
+        >
           Art Gallery
-        </h1>
-        <div className="h-1 w-20 bg-yellow-400 mx-auto rounded-full" />
+        </motion.h1>
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "80px" }}
+          className="h-1.5 bg-yellow-400 mx-auto rounded-full"
+        />
       </div>
 
       {/* MASONRY COLLAGE */}

@@ -33,7 +33,7 @@ export default function VideoGallery() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#1F5C8C] to-[#0F2A44] bg-clip-text text-transparent mb-6"
+                    className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#1F5C8C] to-[#0F2A44] bg-clip-text text-transparent pb-2 px-2 mb-4 hover:opacity-90 transition-opacity inline-block"
                 >
                     Video Gallery
                 </motion.h1>
@@ -44,8 +44,8 @@ export default function VideoGallery() {
                 />
             </div>
 
-            {/* VIDEO GRID */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* VIDEO MASONRY GRID */}
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 max-w-7xl mx-auto">
                 {videos.map((video, i) => (
                     <VideoCard
                         key={i}
@@ -142,28 +142,28 @@ function VideoCard({ video, onClick, index }) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}
-            className="group relative cursor-pointer bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100"
+            className="group relative cursor-pointer bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 mb-8 break-inside-avoid"
         >
             {/* Video Preview */}
-            <div className="relative aspect-video bg-gray-900">
+            <div className="relative bg-gray-900 overflow-hidden">
                 <video
                     ref={videoRef}
                     src={video.url}
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-2xl"
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105 rounded-t-2xl"
                 />
 
                 {/* Overlay Decoration */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
 
                 {/* Play Icon */}
                 <motion.div
-                    animate={{ scale: isHovered ? 1.2 : 1 }}
-                    className="absolute inset-0 flex items-center justify-center"
+                    animate={{ scale: isHovered ? 1.1 : 1 }}
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
                 >
-                    <div className="w-14 h-14 bg-yellow-400 rounded-full flex items-center justify-center shadow-xl transform transition-transform duration-500 group-hover:bg-white">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-yellow-400 rounded-full flex items-center justify-center shadow-xl transform transition-transform duration-300 group-hover:bg-white">
                         <Play fill="currentColor" className="text-[#1F5C8C] ml-1" size={24} />
                     </div>
                 </motion.div>
@@ -175,8 +175,6 @@ function VideoCard({ video, onClick, index }) {
                     {video.title}
                 </h3>
             </div>
-
-
         </motion.div>
     )
 }
