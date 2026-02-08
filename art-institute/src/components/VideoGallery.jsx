@@ -9,11 +9,13 @@ const videos = Object.entries(
         as: "url",
     })
 ).map(([path, url]) => {
-    // Extract filename for title and replace L1 with Level 1
+    // Extract filename for title and remove level mentions
     const fileName = path.split('/').pop()
         .replace('.mp4', '')
         .replace(/_/g, ' ')
-        .replace(/\bL1\b/g, 'Level 1')
+        .replace(/\bL1\b/g, '')
+        .replace(/\bLevel\s*\d*\b/gi, '')
+        .trim()
     return { url, title: fileName }
 })
 

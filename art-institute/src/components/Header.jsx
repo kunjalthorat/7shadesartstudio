@@ -80,68 +80,36 @@ export default function Header() {
       >
         <div
           className="max-w-7xl mx-auto w-full
-    flex flex-row items-center justify-between
-    px-3 md:px-4 text-[10px] sm:text-xs md:text-sm"
+    flex flex-row items-center justify-center sm:justify-between
+    px-3 md:px-4 text-[11px] sm:text-xs md:text-sm"
         >
 
           {/* LEFT TEXT */}
-          <div className="font-medium tracking-tight truncate mr-1 flex-shrink-0">
+          <div className="hidden sm:block font-medium tracking-tight truncate mr-1 flex-shrink-0">
             <span className="hidden sm:inline">Welcome to </span>
-            <span className="text-[9px] sm:text-xs">7 Shades Art Studio</span>
+            <span className="text-xs">7 Shades Art Studio</span>
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-3 sm:gap-6 font-medium">
+          <div className="flex items-center gap-4 sm:gap-6 font-bold">
 
             {/* Phone 1 */}
             <a
               href="tel:8390493388"
-              className="flex items-center gap-1 hover:opacity-80 transition whitespace-nowrap"
+              className="flex items-center gap-1.5 hover:opacity-80 transition whitespace-nowrap"
             >
-              <FaPhoneAlt className="text-[9px] md:text-xs" />
-              <span>8390493388</span>
+              <FaPhoneAlt className="text-[10px] md:text-xs" />
+              <span className="text-[11px] sm:text-xs md:text-sm">8390493388</span>
             </a>
 
             {/* Phone 2 */}
             <a
               href="tel:9168278222"
-              className="flex items-center gap-1 hover:opacity-80 transition whitespace-nowrap"
+              className="flex items-center gap-1.5 hover:opacity-80 transition whitespace-nowrap"
             >
-              <FaPhoneAlt className="text-[9px] md:text-xs" />
-              <span>9168278222</span>
+              <FaPhoneAlt className="text-[10px] md:text-xs" />
+              <span className="text-[11px] sm:text-xs md:text-sm">9168278222</span>
             </a>
-
-            {/* SOCIAL ICONS */}
-            <div className="flex items-center gap-1.5 sm:gap-4 text-[10px] md:text-base">
-
-              <a
-                href="https://www.facebook.com/Ompaitingclasses/"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-80 transition"
-              >
-                <FaFacebookF />
-              </a>
-
-              <a
-                href="https://www.instagram.com/7_shades_art_studio/"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-80 transition"
-              >
-                <FaInstagram />
-              </a>
-
-              <a
-                href="https://www.youtube.com/@7shadesartstudio875"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-80 transition"
-              >
-                <FaYoutube />
-              </a>
-
-            </div>
 
           </div>
 
@@ -169,15 +137,15 @@ export default function Header() {
 
           {/* LOGO */}
           <div
-            className="flex items-center gap-3 cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer"
             onClick={() => handleNavClick("Home")}
           >
             <img
               src={logo}
               alt="7 Shades Art Studio Logo"
-              className="h-10 w-auto object-contain"
+              className="h-11 sm:h-12 w-auto object-contain"
             />
-            <span className="tracking-wide text-xs sm:text-lg md:text-xl font-medium">
+            <span className="tracking-tight text-sm sm:text-lg md:text-xl font-bold">
               7 Shades Art Studio
             </span>
           </div>
@@ -227,9 +195,9 @@ export default function Header() {
         {/* TOP OVERLAP SECTION */}
         <div className="w-full">
           <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-10 py-1 h-[48px]">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Logo" className="h-10 w-auto object-contain" />
-              <span className="tracking-wide text-xs sm:text-lg md:text-xl font-medium">7 Shades Art Studio</span>
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="Logo" className="h-11 sm:h-12 w-auto object-contain" />
+              <span className="tracking-tight text-sm sm:text-lg md:text-xl font-bold">7 Shades Art Studio</span>
             </div>
             <button
               onClick={() => setMenuOpen(false)}
